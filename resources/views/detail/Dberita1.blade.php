@@ -38,8 +38,7 @@
                         <article class="blog-details">
 
                             <div class="post-img">
-                                <img src="{{ url('/storage/layanan') }}/{{ $berita->gambar }}" alt=""
-                                    class="img-fluid">
+                                <img src="{{ url('/image') }}/{{ $item->image }}" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="title">{{ $berita->judul }}</h2>
