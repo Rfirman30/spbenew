@@ -40,7 +40,7 @@ class BeritaController extends Controller
         ]);
 
         $fileName = Uuid::uuid4() . '.' . $request->file('file')->extension();
-        $request->file('file')->move('image', $fileName);
+        $request->file('file')->move('storage', $fileName);
 
 
         $berita = new Berita;
@@ -75,7 +75,7 @@ class BeritaController extends Controller
         $berita = Berita::find($id);
         if ($request->file('file')) {
             $fileName = Uuid::uuid4() . '.' . $request->file('file')->extension();
-            $request->file('file')->move('image', $fileName);
+            $request->file('file')->move('storage', $fileName);
             $berita->gambar = $fileName;
         }
         $berita->judul = $request->judul;
