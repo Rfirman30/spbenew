@@ -39,15 +39,14 @@ class BeritaController extends Controller
             'penulis' => 'required',
         ]);
 
-        // $fileName = Uuid::uuid4() . '.' . $request->file('file')->extension();
-        // $request->file('file')->move(public_path('storage/layanan'), $fileName);
-        $filename = base64_encode(file_get_contents($request->file('file')->pat‌​h()));
+        $fileName = Uuid::uuid4() . '.' . $request->file('file')->extension();
+        $request->file('file')->move(public_path('storage/layanan'), $fileName);
 
         $berita = new Berita;
         $berita->judul = $request->judul;
         $berita->slug = Str::slug($request->judul, '-');
         $berita->isi = $request->isi;
-        $berita->gambar = $filename;
+        $berita->gambar = $fileName;
         $berita->penulis = $request->penulis;
         $berita->date = date('Y-m-d H:i:s');
         $berita->save();
