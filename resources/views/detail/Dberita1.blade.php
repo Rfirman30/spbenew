@@ -54,8 +54,7 @@
                             </div><!-- End meta top -->
 
                             <div class="content">
-                                {!! $berita->isi !!}
-
+                                <p> {!! $berita->isi !!}</p>
                             </div><!-- End post content -->
 
                             <div class="meta-bottom">
