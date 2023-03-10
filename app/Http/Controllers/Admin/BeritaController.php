@@ -40,7 +40,7 @@ class BeritaController extends Controller
         ]);
 
         $fileName = Uuid::uuid4() . '.' . $request->file('file')->extension();
-        $request->file('file')->move(public_path('storage/layanan'), $fileName);
+        $request->file('file')->move('image', $fileName);
 
 
         $berita = new Berita;
