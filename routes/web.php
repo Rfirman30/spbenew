@@ -114,9 +114,10 @@ Route::get('/berita/publish/{id}', [App\Http\Controllers\Admin\BeritaController:
 
 
 //login
-Auth::routes();
+Auth::routes([
+    'register' => false,
+]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::get('/navbarcontrol', function () {

@@ -35,7 +35,7 @@ class BeritaController extends Controller
         $request->validate([
             'judul' => 'required',
             'isi' => 'required',
-            'file' => 'required',
+            'file' => 'required|mine:jpg,jpeg,png',
             'penulis' => 'required',
         ]);
 
@@ -70,6 +70,7 @@ class BeritaController extends Controller
             'judul' => 'required',
             'isi' => 'required',
             'penulis' => 'required',
+            'file' => 'mine:jpg,jpeg,png',
         ]);
 
         $berita = Berita::find($id);

@@ -139,7 +139,7 @@
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
                     <h2>Layanan</h2>
-                    <h4>Public</h4>
+                    <h4>Publik</h4>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ea, dignissimos est mollitia
                         perspiciatis fugit consequatur obcaecati ducimus debitis quisquam aut ad, ex consequuntur accusamus
