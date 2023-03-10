@@ -64,6 +64,11 @@
 
                                 <div class="col-md-6">
                                     <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
+                                    @error('g-recaptcha-response')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
