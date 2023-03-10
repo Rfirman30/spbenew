@@ -42,6 +42,7 @@ class BeritaController extends Controller
         $fileName = Uuid::uuid4() . '.' . $request->file('file')->extension();
         $request->file('file')->move(public_path('storage/layanan'), $fileName);
 
+
         $berita = new Berita;
         $berita->judul = $request->judul;
         $berita->slug = Str::slug($request->judul, '-');
