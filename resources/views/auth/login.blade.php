@@ -59,8 +59,14 @@
                             </div>
 
                             <div class="row mb-3">
-                                <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
+                                <label for="password"
+                                    class="col-md-4 col-form-label text-md-end">{{ __(' ') }}</label>
+
+                                <div class="col-md-6">
+                                    <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
+                                </div>
                             </div>
+
 
                             <div class="row mb-0">
                                 <div class="col-md-8 offset-md-4">
