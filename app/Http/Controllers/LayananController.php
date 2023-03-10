@@ -63,7 +63,9 @@ class LayananController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $layanan = Layanan::find($id);
+
+        return view('admin.layanan.edit', compact('layanan'));
     }
 
     /**
@@ -71,7 +73,17 @@ class LayananController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'layanan' => 'required',
+            'type' => 'required',
+        ]);
+
+        $layanan = Layanan::find($id);
+        $layanan->layanan = $request->layanan;
+        $layanan->type = $request->type;
+        $layanan->save();
+
+        return redirect()->route('layanans.index')->with('success', 'Layanan berhasil diubah');
     }
 
     /**
@@ -79,5 +91,9 @@ class LayananController extends Controller
      */
     public function destroy(string $id)
     {
+        $layanan = Layanan::find($id);
+        $layanan->delete();
+
+        return redirect()->route('layanans.index')->with('success', 'Layanan berhasil dihapus');
     }
 }

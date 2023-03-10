@@ -11,32 +11,28 @@
         <div class="card-body">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Edit Data</h3>
+                    <h3 class="card-title">Tambah Data</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('kebijakans.update', $ar_kebijakan->id) }}" method="POST">
+                <form action="{{ route('layanans.update', $layanan->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="NAMA">Nama</label>
-                            <input type="text" class="form-control" value="{{ $ar_kebijakan->nama }}" name="nama"
-                                placeholder="Isi Nama">
+                            <label for="NAMA">Nama Layanan</label>
+                            <input type="text" class="form-control" value="{{ $layanan->layanan }}" name="layanan"
+                                placeholder="Isi Nama Layanan">
                         </div>
                         <div class="form-group">
-                            <label for="InputFile">Masukkan Link File</label>
-                            <input type="text" class="form-control" value="{{ $ar_kebijakan->file }}" name="file"
-                                placeholder="Isi Link File">
-                            {{-- <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="file" id="exampleInputFile">
-                                    <label class="custom-file-label" for="exampleInputFile">Pilih File</label>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Upload</span>
-                                </div>
-                            </div> --}}
+                            <label for="exampleFormControlSelect1">Pilih Kategory</label>
+                            <select class="form-control" name="type" id="exampleFormControlSelect1">
+                                <option disabled>Pilih Kategoori</option>
+                                <option {{ $layanan->type == 'Public' ? 'selected' : '' }} value="Public">Public</option>
+                                <option {{ $layanan->type == 'Administrasi' ? 'selected' : '' }} value="Administrasi">
+                                    Administrasi
+                                </option>
+                            </select>
                         </div>
                     </div>
                     <!-- /.card-body -->

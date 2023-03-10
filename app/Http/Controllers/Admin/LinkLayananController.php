@@ -50,5 +50,37 @@ class LinkLayananController extends Controller
     }
 
     //edit
+    public function edit($id)
+    {
+        $link = LayananLink::find($id);
+        $layanans = Layanan::all();
+        return view('admin.link_layanan.edit', compact('link', 'layanans'));
+    }
 
+    //update
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama' => 'required',
+            'link' => 'required',
+            'layanan_id' => 'required',
+        ]);
+
+        $layanan = Layanan::find($request->layanan_id);
+
+        LayananLink::where('id', $id)->update([
+            'layanan_id' => $layanan->id,
+            'name' => $request->nama,
+            'link' => $request->link,
+        ]);
+
+        return redirect()->route('link-layanan.index')->with('success', 'Link Layanan berhasil diubah');
+    }
+
+    //destroy
+    public function destroy($id)
+    {
+        LayananLink::destroy($id);
+        return redirect()->route('link-layanan.index')->with('success', 'Link Layanan berhasil dihapus');
+    }
 }

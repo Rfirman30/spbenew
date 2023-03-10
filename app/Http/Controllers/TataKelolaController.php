@@ -66,7 +66,8 @@ class TatakelolaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Tatakelola::find($id);
+        return view('admin.tatakelola.edit', compact('data'));
     }
 
     /**
@@ -74,7 +75,18 @@ class TatakelolaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'file' => 'required'
+        ]);
+
+        $ar_tata = Tatakelola::find($id);
+        $ar_tata->nama = $request->nama;
+        $ar_tata->file = $request->file;
+        $ar_tata->save();
+
+        return redirect()->route('tatakelolas.index')
+            ->with('success', 'Data Tata Kelola Berhasil Diubah');
     }
 
     /**

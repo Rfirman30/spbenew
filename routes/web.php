@@ -98,6 +98,10 @@ Route::post('/visimisis/edit/store', [App\Http\Controllers\Admin\VisiMisiControl
 Route::get('/link-layanan', [App\Http\Controllers\Admin\LinkLayananController::class, 'index'])->name('link-layanan.index');
 Route::get('/link-layanan/create', [App\Http\Controllers\Admin\LinkLayananController::class, 'create'])->name('link-layanan.create');
 Route::post('/link-layanan/store', [App\Http\Controllers\Admin\LinkLayananController::class, 'store'])->name('link-layanan.store');
+Route::get('/link-layanan/edit/{id}', [App\Http\Controllers\Admin\LinkLayananController::class, 'edit'])->name('link-layanan.edit');
+Route::post('/link-layanan/update/{id}', [App\Http\Controllers\Admin\LinkLayananController::class, 'update'])->name('link-layanan.update');
+Route::delete('/link-layanan/delete/{id}', [App\Http\Controllers\Admin\LinkLayananController::class, 'destroy'])->name('link-layanan.destroy');
+
 
 //berita admin
 Route::get('/berita-admin', [App\Http\Controllers\Admin\BeritaController::class, 'index'])->name('berita.index');

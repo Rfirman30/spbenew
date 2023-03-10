@@ -20,7 +20,7 @@ class KebijakanController extends Controller
      */
     public function index()
     {
-        $ar_kebijakan = Manajemen::all();
+        $ar_kebijakan = Kebijakan::all();
 
         return view('admin.kebijakan_admin.index', compact('ar_kebijakan'));
     }
@@ -65,7 +65,8 @@ class KebijakanController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $ar_kebijakan = Kebijakan::find($id);
+        return view('admin.kebijakan_admin.edit', compact('ar_kebijakan'));
     }
 
     /**
@@ -73,7 +74,18 @@ class KebijakanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'file' => 'required'
+        ]);
+
+        $ar_kebijakan = Kebijakan::find($id);
+        $ar_kebijakan->nama = $request->nama;
+        $ar_kebijakan->file = $request->file;
+        $ar_kebijakan->save();
+
+        return redirect()->route('kebijakans.index')
+            ->with('success', 'Data Kebijakan Berhasil Diubah');
     }
 
     /**

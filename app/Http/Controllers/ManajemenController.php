@@ -59,7 +59,8 @@ class ManajemenController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $management = Manajemen::find($id);
+        return view('admin.manajemen.edit', compact('management'));
     }
 
     /**
@@ -67,7 +68,17 @@ class ManajemenController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required|string',
+            'file' => 'required|string',
+        ]);
+
+        $management = Manajemen::find($id);
+        $management->nama = $request->nama;
+        $management->file = $request->file;
+        $management->save();
+
+        return redirect()->route('manajemens.index')->with('success', 'Data Kebijakan Berhasil Diubah');
     }
 
     /**

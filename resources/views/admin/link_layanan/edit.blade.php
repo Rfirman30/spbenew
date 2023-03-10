@@ -15,28 +15,28 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('kebijakans.update', $ar_kebijakan->id) }}" method="POST">
+                <form action="{{ route('link-layanan.update', $link->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="NAMA">Nama</label>
-                            <input type="text" class="form-control" value="{{ $ar_kebijakan->nama }}" name="nama"
-                                placeholder="Isi Nama">
+                            <label for="exampleFormControlSelect1">Pilih Kategory</label>
+                            <select class="form-control" name="layanan_id" id="exampleFormControlSelect1">
+                                <option disabled>Pilih Layanan</option>
+                                @foreach ($layanans as $item)
+                                    <option {{ $item->id == $link->id ? 'selected' : '' }} value="{{ $item->id }}">
+                                        {{ $item->layanan }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="InputFile">Masukkan Link File</label>
-                            <input type="text" class="form-control" value="{{ $ar_kebijakan->file }}" name="file"
-                                placeholder="Isi Link File">
-                            {{-- <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="file" id="exampleInputFile">
-                                    <label class="custom-file-label" for="exampleInputFile">Pilih File</label>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Upload</span>
-                                </div>
-                            </div> --}}
+                            <label for="NAMA">Nama Layanan</label>
+                            <input type="text" class="form-control" value="{{ $link->name }}" name="nama"
+                                placeholder="Isi Nama Layanan">
+                        </div>
+                        <div class="form-group">
+                            <label for="NAMA">link Layanan</label>
+                            <input type="text" class="form-control" value="{{ $link->link }}" name="link"
+                                placeholder="Isi Link Layanan">
                         </div>
                     </div>
                     <!-- /.card-body -->
