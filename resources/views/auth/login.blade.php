@@ -72,9 +72,6 @@
                                 </div>
                             </div>
 
-                            @if ($errors->any())
-                                {!! implode('', $errors->all('<div>:message</div>')) !!}
-                            @endif
 
                             <div class="row mb-0">
                                 <div class="col-md-8 offset-md-4">
