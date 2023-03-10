@@ -49,6 +49,7 @@ class BeritaController extends Controller
         $berita->isi = $request->isi;
         $berita->gambar = $fileName;
         $berita->penulis = $request->penulis;
+        $berita->status = 'unpublish';
         $berita->date = date('Y-m-d H:i:s');
         $berita->save();
 
