@@ -37,7 +37,7 @@
                         <div class="col-xl-4 col-md-6">
                             <article>
                                 <div class="post-img">
-                                    <img src="{{ url('/image') }}/{{ $item->image }}" alt="" class="img-fluid">
+                                    <img src="{{ url('/image') }}/{{ $item->gambar }}" alt="" class="img-fluid">
                                 </div>
 
                                 <p class="post-category">Public</p>
