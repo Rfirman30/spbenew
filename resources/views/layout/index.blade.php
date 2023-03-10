@@ -38,7 +38,7 @@
                         efisiensi sistem pemerintahan berbasis elektronik.
                     </p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started">Mulai</a>
+                        <a href="#services" class="btn-get-started">Mulai</a>
                         <a href="https://youtu.be/6RiArqhWLDw"
                             class="glightbox btn-watch-video d-flex align-items-center"><i
                                 class="bi bi-play-circle"></i><span>Tonton Video</span></a>
