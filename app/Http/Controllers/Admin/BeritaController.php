@@ -73,6 +73,11 @@ class BeritaController extends Controller
         ]);
 
         $berita = Berita::find($id);
+        if ($request->file('file')) {
+            $fileName = Uuid::uuid4() . '.' . $request->file('file')->extension();
+            $request->file('file')->move('image', $fileName);
+            $berita->gambar = $fileName;
+        }
         $berita->judul = $request->judul;
         $berita->slug = Str::slug($request->judul, '-');
         $berita->isi = $request->isi;
