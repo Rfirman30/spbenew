@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('judul', 100);
             $table->string('slug', 100);
             $table->text('isi');
-            $table->string('gambar', 100);
+            $table->text('gambar');
             $table->string('penulis', 100);
             $table->string('date');
             $table->string('status');
