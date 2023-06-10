@@ -60,6 +60,7 @@
                             <label for="exampleFormControlTextarea1" class="form-label">Question</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
+                        <button type="submit" class="btn btn-primary">Send</button>
                     </form>
 
                     <!-- End post list item -->
