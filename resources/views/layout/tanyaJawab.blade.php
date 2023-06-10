@@ -46,15 +46,13 @@
                             <div class="col-5">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Name</label>
-                                    <input type="emtextail" class="form-control" id="exampleFormControlInput1"
-                                        placeholder="name@example.com">
+                                    <input type="emtextail" class="form-control" id="exampleFormControlInput1">
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Subjcet</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="name@example.com">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Question</label>
