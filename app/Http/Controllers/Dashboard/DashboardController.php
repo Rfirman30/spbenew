@@ -55,4 +55,9 @@ class DashboardController extends Controller
         $recent = Berita::orderBy('created_at', 'desc')->take(5)->get();
         return view('detail.Dberita1', compact('berita', 'recent'));
     }
+
+    public function tanyaJawab()
+    {
+        return view('layout.tanyaJawab');
+    }
 }

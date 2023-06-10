@@ -25,6 +25,7 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('manajemen', 'managementView')->name('manajemen');
     Route::get('about', 'visiMisiView')->name('about');
     Route::get('/', 'homeView')->name('home');
+    Route::get('tanya-jawab', 'tanyaJawab')->name('tanya-jawab');
     Route::get('/berita', 'beritaView')->name('berita');
     Route::get('/detail/{slug}', 'detailBeritaView')->name('detail.berita');
 });
