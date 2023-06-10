@@ -56,7 +56,7 @@
                     <a href="{{ route('tata-kelola') }}">Tata Kelola SPBE</a>
                 </li>
                 <li>
-                    <a href="{{ route('tata-kelola') }}">Tanya Jawab SPBE</a>
+                    <a href="{{ route('tanya-jawab') }}">Tanya Jawab SPBE</a>
                 </li>
                 <li>
                     <a href="/manajemen">Manajemen SPBE</a>
