@@ -120,6 +120,12 @@
                                 <p>Footer</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('question.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Q&A</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">

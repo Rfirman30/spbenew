@@ -114,6 +114,12 @@ Route::delete('/berita/delete/{id}', [App\Http\Controllers\Admin\BeritaControlle
 Route::get('/berita/publish/{id}', [App\Http\Controllers\Admin\BeritaController::class, 'publish'])->name('berita.publish');
 
 
+//question
+Route::post('/question/reply/{id}', [App\Http\Controllers\Dashboard\TanyaJawabController::class, 'storeMessage'])->name('question.reply');
+Route::post('/question/submit', [App\Http\Controllers\Dashboard\TanyaJawabController::class, 'store'])->name('question.store');
+Route::get('/question/index', [App\Http\Controllers\Dashboard\TanyaJawabController::class, 'index'])->name('question.index');
+
+
 //login
 Auth::routes([
     'register' => false,

@@ -33,30 +33,32 @@
 
                 <div class="row gy-4 posts-list">
 
-                    <form action="" method="post">
+                    <form action="{{ route('question.store') }}" method="post">
                         @csrf
                         <div class="row">
                             <div class="col-5">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
                                         placeholder="name@example.com">
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Name</label>
-                                    <input type="emtextail" class="form-control" id="exampleFormControlInput1">
+                                    <input type="emtextail" name="name" class="form-control"
+                                        id="exampleFormControlInput1">
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Subjcet</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                            <input type="text" class="form-control" name="subject" id="exampleFormControlInput1"
+                                placeholder="">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Question</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send</button>
                     </form>
