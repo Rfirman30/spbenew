@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Mail\QuestionMailer;
 use App\Models\QuestionModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Mail;
 
 class TanyaJawabController extends Controller
 {
@@ -44,6 +46,8 @@ class TanyaJawabController extends Controller
         $data->answer()->create([
             'answer' => $request->answer
         ]);
+
+        Mail::to($data->email)->send(new QuestionMailer($request->answer));
 
         return redirect()->route('question.index');
     }
