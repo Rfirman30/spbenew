@@ -29,7 +29,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->email }}</td>
                                 <td>{{ $item->subject }}</td>
-                                @if ($item->answer)
+                                @if ($item->answer->answer)
                                     <td>Terjawab</td>
                                 @else
                                     <td>Belum Terjawab</td>

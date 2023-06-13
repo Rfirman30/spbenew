@@ -35,7 +35,7 @@
                     <label for="exampleFormControlTextarea1" class="form-label">Question</label>
                     <textarea class="form-control" name="question" readonly id="exampleFormControlTextarea1" rows="3">{{ $data->question }}</textarea>
                 </div>
-                @if ($data->answer)
+                @if ($data->answer->answer)
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer</label>
                         <textarea class="form-control" name="answer" id="exampleFormControlTextarea1" rows="3">{{ $data->answer->answer }}</textarea>
