@@ -11,7 +11,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <div class="card">
+            <div class="card p-5">
                 <form action="{{ route('question.reply', Crypt::encrypt($data->id)) }}" method="post">
                     @csrf
                     <div class="row">

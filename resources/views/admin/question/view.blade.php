@@ -11,7 +11,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <div class="card">
+            <div class="card p-5">
                 <div class="row">
                     <div class="col-5">
                         <div class="mb-3">
