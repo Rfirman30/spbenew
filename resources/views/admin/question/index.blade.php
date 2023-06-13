@@ -36,12 +36,12 @@
                                 @endif
                                 <td>{{ $item->created_at }}</td>
                                 <td>
-                                    <a href="{{ route('berita.publish', $item->id) }}" class="btn btn-success m-1"
-                                        title="Edit detail">
+                                    <a href="{{ route('question.reply/view', Crypt::encrypt($item->id)) }}"
+                                        class="btn btn-success m-1" title="Edit detail">
                                         Balas
                                     </a>
-                                    <a href="{{ route('berita.publish', $item->id) }}" class="btn btn-warning m-1"
-                                        title="Edit detail">
+                                    <a href="{{ route('question.view', Crypt::encrypt($item->id)) }}"
+                                        class="btn btn-warning m-1" title="Edit detail">
                                         Lihat Pesan
                                     </a>
 

@@ -116,8 +116,10 @@ Route::get('/berita/publish/{id}', [App\Http\Controllers\Admin\BeritaController:
 
 //question
 Route::post('/question/reply/{id}', [App\Http\Controllers\Dashboard\TanyaJawabController::class, 'storeMessage'])->name('question.reply');
+Route::get('/question/reply/view/{id}', [App\Http\Controllers\Dashboard\TanyaJawabController::class, 'replyMessage'])->name('question.reply/view');
 Route::post('/question/submit', [App\Http\Controllers\Dashboard\TanyaJawabController::class, 'store'])->name('question.store');
 Route::get('/question/index', [App\Http\Controllers\Dashboard\TanyaJawabController::class, 'index'])->name('question.index');
+Route::get('/question/view/{id}', [App\Http\Controllers\Dashboard\TanyaJawabController::class, 'viewMessage'])->name('question.view');
 
 
 //login
