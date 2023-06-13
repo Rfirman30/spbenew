@@ -42,7 +42,10 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Answer</label>
                         <textarea class="form-control" name="answer" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send</button>
+                    @if ($data->answer)
+                    @else
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    @endif
                 </form>
             </div>
             <!-- /.card-body -->
